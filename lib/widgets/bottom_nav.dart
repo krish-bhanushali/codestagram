@@ -1,7 +1,9 @@
 import 'package:codestagram/controllers/bottom_nav_controller.dart';
+import 'package:codestagram/pages/story/stories.dart';
 import 'package:codestagram/styles/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 
 class BottomNav extends StatelessWidget {
   final BottomNavController bottomNavController;
@@ -52,7 +54,7 @@ class BottomNav extends StatelessWidget {
           ),
           GestureDetector(
             onTap: () {
-              bottomNavController.changePage(3);
+              Get.to(CodeStoryView());
             },
             child: Container(
               padding: EdgeInsets.all(6),
