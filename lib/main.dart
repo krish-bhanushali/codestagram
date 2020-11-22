@@ -1,4 +1,5 @@
 import 'package:codestagram/layouts/bottom_nav_layout.dart';
+import 'package:codestagram/pages/login/login_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: BottomNavLayout(),
+      home: LoginView(),
     );
   }
 }
