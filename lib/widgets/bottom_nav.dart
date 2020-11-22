@@ -50,16 +50,21 @@ class BottomNav extends StatelessWidget {
               ),
             ),
           ),
-          Container(
-            padding: EdgeInsets.all(6),
-            decoration: BoxDecoration(
-              border: Border.all(color: AppColors.black, width: 2),
-              borderRadius: BorderRadius.all(Radius.circular(100)),
-            ),
-            child: SvgPicture.asset(
-              'assets/svg/plus.svg',
-              width: 26,
-              color: AppColors.black,
+          GestureDetector(
+            onTap: () {
+              bottomNavController.changePage(3);
+            },
+            child: Container(
+              padding: EdgeInsets.all(6),
+              decoration: BoxDecoration(
+                border: Border.all(color: AppColors.black, width: 2),
+                borderRadius: BorderRadius.all(Radius.circular(100)),
+              ),
+              child: SvgPicture.asset(
+                'assets/svg/plus.svg',
+                width: 26,
+                color: AppColors.black,
+              ),
             ),
           ),
           Container(

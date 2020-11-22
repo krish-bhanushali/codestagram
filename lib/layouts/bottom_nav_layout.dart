@@ -1,6 +1,7 @@
 import 'package:codestagram/controllers/bottom_nav_controller.dart';
 import 'package:codestagram/pages/home/home.dart';
 import 'package:codestagram/pages/search/search.dart';
+import 'package:codestagram/pages/story/stories.dart';
 import 'package:codestagram/widgets/bottom_nav.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -17,8 +18,13 @@ class BottomNavLayout extends StatelessWidget {
             child: GetBuilder<BottomNavController>(
               init: _bottomNavController,
               builder: (controller) {
-                if (controller.bottomNavPage.toString() == 'BottomNavPage.search') {
+                if (controller.bottomNavPage.toString() ==
+                    'BottomNavPage.search') {
                   return SearchPage();
+                }
+                if (controller.bottomNavPage.toString() ==
+                    'BottomNavPage.story') {
+                  return CodeStoryView();
                 }
                 return HomePage();
               },
