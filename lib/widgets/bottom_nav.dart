@@ -12,7 +12,7 @@ class BottomNav extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 64,
+      height: 60,
       decoration: BoxDecoration(
         color: AppColors.white,
         borderRadius: BorderRadius.only(
@@ -26,84 +26,112 @@ class BottomNav extends StatelessWidget {
       child: GetBuilder<BottomNavController>(
         init: bottomNavController,
         builder: (bottomNavController) {
-          return Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              GestureDetector(
-                onTap: () {
-                  bottomNavController.changePage(1);
-                },
-                child: Container(
-                  color: AppColors.white,
-                  width: ScreenUtil().setWidth(414 / 5),
-                  padding: EdgeInsets.symmetric(vertical: 16),
-                  child: SvgPicture.asset(
-                    bottomNavController.bottomNavPage.toString() == 'BottomNavPage.home' ? 'assets/svg/home-f.svg' : 'assets/svg/home.svg',
-                    width: 26,
-                    color: AppColors.black,
+          return bottomNavController.isMessage
+              ? Container(
+                  decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(18))),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      SvgPicture.asset(
+                        'assets/svg/camera-f.svg',
+                        color: AppColors.black,
+                        height: 24,
+                      ),
+                      SizedBox(width: 6),
+                      Text(
+                        'Camera',
+                        style: TextStyle(
+                          color: AppColors.black,
+                          fontFamily: 'Avenir',
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
                   ),
-                ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  bottomNavController.changePage(2);
-                },
-                child: Container(
-                  color: AppColors.white,
-                  width: ScreenUtil().setWidth(414 / 5),
-                  padding: EdgeInsets.symmetric(vertical: 16),
-                  child: SvgPicture.asset(
-                    bottomNavController.bottomNavPage.toString() == 'BottomNavPage.search' ? 'assets/svg/search-f.svg' : 'assets/svg/search.svg',
-                    width: 26,
-                    color: AppColors.black,
-                  ),
-                ),
-              ),
-              Container(
-                width: ScreenUtil().setWidth(414 / 10),
-                height: ScreenUtil().setWidth(414 / 10),
-                decoration: BoxDecoration(
-                  border: Border.all(color: AppColors.black, width: 1),
-                  borderRadius: BorderRadius.all(Radius.circular(100)),
-                ),
-                child: SvgPicture.asset(
-                  'assets/svg/plus.svg',
-                  width: 26,
-                  color: AppColors.black,
-                ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  bottomNavController.changePage(4);
-                },
-                child: Container(
-                  color: AppColors.white,
-                  width: ScreenUtil().setWidth(414 / 5),
-                  padding: EdgeInsets.symmetric(vertical: 16),
-                  child: SvgPicture.asset(
-                    bottomNavController.bottomNavPage.toString() == 'BottomNavPage.activity' ? 'assets/svg/heart-f.svg' : 'assets/svg/heart.svg',
-                    width: 26,
-                    color: AppColors.black,
-                  ),
-                ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  bottomNavController.changePage(5);
-                },
-                child: Container(
-                  color: AppColors.white,
-                  width: ScreenUtil().setWidth(414 / 5),
-                  padding: EdgeInsets.symmetric(vertical: 16),
-                  child: SvgPicture.asset(
-                    bottomNavController.bottomNavPage.toString() == 'BottomNavPage.profile' ? 'assets/svg/user-f.svg' : 'assets/svg/user.svg',
-                    width: 26,
-                    color: AppColors.black,
-                  ),
-                ),
-              ),
-            ],
-          );
+                )
+              : Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        bottomNavController.changePage(1);
+                      },
+                      child: Container(
+                        color: AppColors.white,
+                        width: ScreenUtil().setWidth(414 / 5),
+                        padding: EdgeInsets.symmetric(vertical: 16),
+                        child: SvgPicture.asset(
+                          bottomNavController.bottomNavPage.toString() == 'BottomNavPage.home' ? 'assets/svg/home-f.svg' : 'assets/svg/home.svg',
+                          width: 26,
+                          color: AppColors.black,
+                        ),
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        bottomNavController.changePage(2);
+                      },
+                      child: Container(
+                        color: AppColors.white,
+                        width: ScreenUtil().setWidth(414 / 5),
+                        padding: EdgeInsets.symmetric(vertical: 16),
+                        child: SvgPicture.asset(
+                          bottomNavController.bottomNavPage.toString() == 'BottomNavPage.search'
+                              ? 'assets/svg/search-f.svg'
+                              : 'assets/svg/search.svg',
+                          width: 26,
+                          color: AppColors.black,
+                        ),
+                      ),
+                    ),
+                    Container(
+                      width: ScreenUtil().setWidth(414 / 10),
+                      height: ScreenUtil().setWidth(414 / 10),
+                      decoration: BoxDecoration(
+                        border: Border.all(color: AppColors.black, width: 1),
+                        borderRadius: BorderRadius.all(Radius.circular(100)),
+                      ),
+                      child: SvgPicture.asset(
+                        'assets/svg/plus.svg',
+                        width: 26,
+                        color: AppColors.black,
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        bottomNavController.changePage(4);
+                      },
+                      child: Container(
+                        color: AppColors.white,
+                        width: ScreenUtil().setWidth(414 / 5),
+                        padding: EdgeInsets.symmetric(vertical: 16),
+                        child: SvgPicture.asset(
+                          bottomNavController.bottomNavPage.toString() == 'BottomNavPage.activity'
+                              ? 'assets/svg/heart-f.svg'
+                              : 'assets/svg/heart.svg',
+                          width: 26,
+                          color: AppColors.black,
+                        ),
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        bottomNavController.changePage(5);
+                      },
+                      child: Container(
+                        color: AppColors.white,
+                        width: ScreenUtil().setWidth(414 / 5),
+                        padding: EdgeInsets.symmetric(vertical: 16),
+                        child: SvgPicture.asset(
+                          bottomNavController.bottomNavPage.toString() == 'BottomNavPage.profile' ? 'assets/svg/user-f.svg' : 'assets/svg/user.svg',
+                          width: 26,
+                          color: AppColors.black,
+                        ),
+                      ),
+                    ),
+                  ],
+                );
         },
       ),
     );
