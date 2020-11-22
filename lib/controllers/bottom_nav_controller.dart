@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-enum BottomNavPage { home, search }
+enum BottomNavPage { home, search, activity, profile }
 
 class BottomNavController extends GetxController {
   BottomNavPage bottomNavPage = BottomNavPage.home;
@@ -11,6 +11,12 @@ class BottomNavController extends GetxController {
     }
     if (c == 2) {
       bottomNavPage = BottomNavPage.search;
+    }
+    if (c == 4) {
+      bottomNavPage = BottomNavPage.activity;
+    }
+    if (c == 5) {
+      bottomNavPage = BottomNavPage.profile;
     }
 
     update();

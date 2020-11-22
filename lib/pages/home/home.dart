@@ -1,6 +1,4 @@
-import 'package:codestagram/widgets/bottom_nav.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'widgets/post.dart';
 import 'widgets/story_section.dart';
 import '../../styles/colors.dart';
