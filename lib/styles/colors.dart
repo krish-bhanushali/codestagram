@@ -5,6 +5,7 @@ class AppColors {
   static const Color blue = Color(0xFF0C8EFF);
   static const Color black = Color(0xFF22262F);
   static const Color pink = Color(0xFFFF414D);
+  static const Color lightgrey = Color(0xFFF2F2F2);
 
   static const Color gradient1 = Color(0xFFF58529);
   static const Color gradient2 = Color(0xFFDD2A7B);
