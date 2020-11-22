@@ -97,6 +97,7 @@ class Post extends StatelessWidget {
                   SvgPicture.asset(
                     'assets/svg/message-alt.svg',
                     width: 26,
+                    color: AppColors.black,
                   ),
                   SizedBox(width: 2),
                   Text(
@@ -112,14 +113,16 @@ class Post extends StatelessWidget {
               SvgPicture.asset(
                 'assets/svg/paper-plane.svg',
                 width: 26,
+                color: AppColors.black,
               ),
               SvgPicture.asset(
                 'assets/svg/bookmark.svg',
                 width: 26,
+                color: AppColors.black,
               ),
             ],
           ),
-        )
+        ),
       ],
     );
   }

@@ -1,5 +1,6 @@
+import 'package:codestagram/layouts/bottom_nav_layout.dart';
 import 'package:flutter/material.dart';
-import 'pages/home/home.dart';
+import 'package:get/get.dart';
 
 void main() {
   runApp(MyApp());
@@ -8,14 +9,14 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Application',
+    return GetMaterialApp(
+      title: 'Codestagram',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: HomePage(),
+      home: BottomNavLayout(),
     );
   }
 }
