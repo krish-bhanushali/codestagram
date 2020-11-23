@@ -1,5 +1,8 @@
 import 'package:codestagram/pages/login/widgets/clipper.dart';
+import 'package:codestagram/pages/login/widgets/signInButton.dart';
+
 import 'package:flutter/material.dart';
+
 import 'package:get/get.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -17,6 +20,7 @@ class _LoginViewState extends State<LoginView> {
     double width = Get.width;
     return Scaffold(
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           ClipPath(
             clipper: LoginTopContainerClipper(),
@@ -32,11 +36,10 @@ class _LoginViewState extends State<LoginView> {
                     itemBuilder: (context, index) {
                       return Container(
                           decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(24)),
                         image: DecorationImage(
                           fit: BoxFit.cover,
                           image: NetworkImage(
-                            'https://cdn.mos.cms.futurecdn.net/2nUGsD2QnvC9BzM8geN48M-1200-80.jpg',
+                            'https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/ae9b8a96467331.5eb6d4b88f56a.jpg',
                           ),
                         ),
                       ));
@@ -61,7 +64,50 @@ class _LoginViewState extends State<LoginView> {
             ),
             //Page View Builder for photos and a smooth indicator on stack
           ),
-          Container()
+          Container(
+            child: Column(
+              children: [
+                SignInWidget(
+                  width: width,
+                  height: height,
+                  hasIcon: true,
+                  iconSource: 'assets/svg/Facebook.svg',
+                  title: 'Sign in with Facebook',
+                  titleColor: Colors.black,
+                  fillColor: Colors.transparent,
+                ),
+                SizedBox(
+                  height: 20.0,
+                ),
+                SignInWidget(
+                  height: height,
+                  width: width,
+                  hasIcon: false,
+                  iconSource: 'assets/svg/Facebook.svg',
+                  title: 'Sign in with your email',
+                  titleColor: Colors.white,
+                  fillColor: Colors.black,
+                ),
+                SizedBox(
+                  height: 50.0,
+                ),
+                Text(
+                  'Not a member? Signup now',
+                  style: TextStyle(fontFamily: 'Avenir', color: Colors.grey),
+                ),
+                SizedBox(
+                  height: 20.0,
+                ),
+                Text(
+                  'Forget Password?',
+                  style: TextStyle(
+                      fontFamily: 'Avenir',
+                      color: Colors.blue,
+                      fontWeight: FontWeight.bold),
+                )
+              ],
+            ),
+          )
         ],
       ),
     );

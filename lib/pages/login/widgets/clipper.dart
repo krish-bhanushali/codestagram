@@ -8,8 +8,8 @@ class LoginTopContainerClipper extends CustomClipper<Path> {
 
     path.lineTo(0.0, size.height);
     path.quadraticBezierTo(size.width * 0.02, size.height - roundness,
-        size.width * 0.15, size.height - roundness);
-    path.lineTo(size.width * 0.85, size.height - roundness);
+        size.width * 0.10, size.height - roundness);
+    path.lineTo(size.width * 0.90, size.height - roundness);
     path.quadraticBezierTo(size.width + size.width * 0.04,
         size.height - roundness, size.width, size.height + roundness);
     path.lineTo(size.width, 0.0);
