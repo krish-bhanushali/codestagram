@@ -33,7 +33,7 @@ class ProfileAppBar extends StatelessWidget implements PreferredSizeWidget {
         child: Row(
           children: [
             Text(
-              'Suraj Boniwal',
+              'Suraj',
               style: TextStyle(
                 color: AppColors.black,
                 fontFamily: 'Avenir',
