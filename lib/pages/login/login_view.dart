@@ -1,8 +1,6 @@
 import 'package:codestagram/pages/login/widgets/clipper.dart';
 import 'package:codestagram/pages/login/widgets/signInButton.dart';
-
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -35,21 +33,21 @@ class _LoginViewState extends State<LoginView> {
                     itemCount: 3,
                     itemBuilder: (context, index) {
                       return Container(
-                          decoration: BoxDecoration(
-                        image: DecorationImage(
-                          fit: BoxFit.cover,
-                          image: NetworkImage(
-                            'https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/ae9b8a96467331.5eb6d4b88f56a.jpg',
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: NetworkImage(
+                              'https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/ae9b8a96467331.5eb6d4b88f56a.jpg',
+                            ),
                           ),
                         ),
-                      ));
+                      );
                     },
                     onPageChanged: (value) {},
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.only(
-                      bottom: height * 0.07, left: width * 0.07),
+                  margin: EdgeInsets.only(bottom: height * 0.07, left: width * 0.07),
                   child: SmoothPageIndicator(
                     controller: _pageViewScrollController,
                     count: 3,
@@ -100,10 +98,7 @@ class _LoginViewState extends State<LoginView> {
                 ),
                 Text(
                   'Forget Password?',
-                  style: TextStyle(
-                      fontFamily: 'Avenir',
-                      color: Colors.blue,
-                      fontWeight: FontWeight.bold),
+                  style: TextStyle(fontFamily: 'Avenir', color: Colors.blue, fontWeight: FontWeight.bold),
                 )
               ],
             ),
