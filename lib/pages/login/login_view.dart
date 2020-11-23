@@ -1,3 +1,4 @@
+import 'package:codestagram/pages/login/login_resume_view.dart';
 import 'package:codestagram/pages/login/widgets/clipper.dart';
 import 'package:codestagram/pages/login/widgets/signInButton.dart';
 
@@ -39,7 +40,7 @@ class _LoginViewState extends State<LoginView> {
                         image: DecorationImage(
                           fit: BoxFit.cover,
                           image: NetworkImage(
-                            'https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/ae9b8a96467331.5eb6d4b88f56a.jpg',
+                            'https://mir-s3-cdn-cf.behance.net/project_modules/disp/0f375488029143.5dca2fcc5aafd.jpg',
                           ),
                         ),
                       ));
@@ -53,7 +54,7 @@ class _LoginViewState extends State<LoginView> {
                   child: SmoothPageIndicator(
                     controller: _pageViewScrollController,
                     count: 3,
-                    effect: WormEffect(
+                    effect: ExpandingDotsEffect(
                       activeDotColor: Colors.white,
                       dotHeight: 8,
                       dotWidth: 8,
@@ -80,6 +81,10 @@ class _LoginViewState extends State<LoginView> {
                   height: 20.0,
                 ),
                 SignInWidget(
+                  function: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => LoginResumeView()));
+                  },
                   height: height,
                   width: width,
                   hasIcon: false,

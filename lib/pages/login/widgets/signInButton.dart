@@ -11,6 +11,7 @@ class SignInWidget extends StatelessWidget {
     this.titleColor,
     this.hasIcon,
     this.iconSource,
+    this.function,
   }) : super(key: key);
 
   final double width;
@@ -20,38 +21,42 @@ class SignInWidget extends StatelessWidget {
   final Color titleColor;
   final bool hasIcon;
   final String iconSource;
+  final Function function;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(8.0),
-      width: width * 0.75,
-      height: height * 0.09,
-      decoration: BoxDecoration(
-          color: fillColor,
-          border: Border.all(color: Colors.grey[400]),
-          borderRadius: BorderRadius.all(Radius.circular(25.0))),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Visibility(
-            visible: hasIcon,
-            child: SvgPicture.asset(
-              iconSource,
-              width: 36,
+    return GestureDetector(
+      onTap: function,
+      child: Container(
+        padding: EdgeInsets.all(8.0),
+        width: width * 0.75,
+        height: height * 0.09,
+        decoration: BoxDecoration(
+            color: fillColor,
+            border: Border.all(color: Colors.grey[400]),
+            borderRadius: BorderRadius.all(Radius.circular(25.0))),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Visibility(
+              visible: hasIcon,
+              child: SvgPicture.asset(
+                iconSource,
+                width: 36,
+              ),
             ),
-          ),
-          SizedBox(
-            width: 20.0,
-          ),
-          Text(
-            title,
-            style: TextStyle(
-                fontFamily: 'Avenir',
-                fontWeight: FontWeight.bold,
-                color: titleColor),
-          )
-        ],
+            SizedBox(
+              width: 20.0,
+            ),
+            Text(
+              title,
+              style: TextStyle(
+                  fontFamily: 'Avenir',
+                  fontWeight: FontWeight.bold,
+                  color: titleColor),
+            )
+          ],
+        ),
       ),
     );
   }
