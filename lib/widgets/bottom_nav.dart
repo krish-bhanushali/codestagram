@@ -63,7 +63,7 @@ class BottomNav extends StatelessWidget {
                         padding: EdgeInsets.symmetric(vertical: 16),
                         child: SvgPicture.asset(
                           bottomNavController.bottomNavPage.toString() == 'BottomNavPage.home' ? 'assets/svg/home-f.svg' : 'assets/svg/home.svg',
-                          width: 26,
+                          width: 20,
                           color: AppColors.black,
                         ),
                       ),
@@ -80,7 +80,7 @@ class BottomNav extends StatelessWidget {
                           bottomNavController.bottomNavPage.toString() == 'BottomNavPage.search'
                               ? 'assets/svg/search-f.svg'
                               : 'assets/svg/search.svg',
-                          width: 26,
+                          width: 20,
                           color: AppColors.black,
                         ),
                       ),
@@ -92,11 +92,7 @@ class BottomNav extends StatelessWidget {
                         border: Border.all(color: AppColors.black, width: 1),
                         borderRadius: BorderRadius.all(Radius.circular(100)),
                       ),
-                      child: SvgPicture.asset(
-                        'assets/svg/plus.svg',
-                        width: 26,
-                        color: AppColors.black,
-                      ),
+                      child: Icon(Icons.add),
                     ),
                     GestureDetector(
                       onTap: () {
@@ -110,7 +106,7 @@ class BottomNav extends StatelessWidget {
                           bottomNavController.bottomNavPage.toString() == 'BottomNavPage.activity'
                               ? 'assets/svg/heart-f.svg'
                               : 'assets/svg/heart.svg',
-                          width: 26,
+                          width: 20,
                           color: AppColors.black,
                         ),
                       ),
@@ -125,7 +121,7 @@ class BottomNav extends StatelessWidget {
                         padding: EdgeInsets.symmetric(vertical: 16),
                         child: SvgPicture.asset(
                           bottomNavController.bottomNavPage.toString() == 'BottomNavPage.profile' ? 'assets/svg/user-f.svg' : 'assets/svg/user.svg',
-                          width: 26,
+                          width: 20,
                           color: AppColors.black,
                         ),
                       ),
