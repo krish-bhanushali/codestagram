@@ -1,5 +1,6 @@
 import 'package:codestagram/styles/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class ProfilePage extends StatelessWidget {
   @override
@@ -29,8 +30,9 @@ class ProfileAppBar extends StatelessWidget implements PreferredSizeWidget {
       preferredSize: preferredSize,
       child: Container(
         height: double.infinity,
-        padding: EdgeInsets.only(top: padding, left: 12, right: 12),
+        padding: EdgeInsets.only(top: padding, left: 16, right: 16),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
               'Suraj Boniwal',
@@ -40,6 +42,11 @@ class ProfileAppBar extends StatelessWidget implements PreferredSizeWidget {
                 fontWeight: FontWeight.bold,
                 fontSize: 16,
               ),
+            ),
+            SvgPicture.asset(
+              'assets/svg/setting.svg',
+              color: Colors.grey[700],
+              width: 20,
             ),
           ],
         ),

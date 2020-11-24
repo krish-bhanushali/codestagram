@@ -29,14 +29,14 @@ class SearchPage extends StatelessWidget {
                           topRight: Radius.circular(index == 0 ? 0 : borderRadius),
                         ),
                         child: Image.network(
-                          'https://picsum.photos/id/${index + 50}/1080/1080',
+                          'https://picsum.photos/id/${index + 30}/1080/1080',
                           fit: BoxFit.cover,
                         ),
                       ),
                     );
                   },
                   staggeredTileBuilder: (int index) {
-                    return index == 0 ? StaggeredTile.count(4, 4) : StaggeredTile.count(2, 2);
+                    return index == 0 || index == 7 || index == 16 ? StaggeredTile.count(4, 4) : StaggeredTile.count(2, 2);
                   },
                 ),
               ),
