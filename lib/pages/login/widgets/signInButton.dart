@@ -12,6 +12,7 @@ class SignInWidget extends StatelessWidget {
     this.hasIcon,
     this.iconSource,
     this.function,
+    this.isImage = false,
   }) : super(key: key);
 
   final double width;
@@ -22,13 +23,14 @@ class SignInWidget extends StatelessWidget {
   final bool hasIcon;
   final String iconSource;
   final Function function;
+  final bool isImage;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: function,
       child: Container(
-        padding: EdgeInsets.all(8.0),
+        padding: EdgeInsets.all(16.0),
         width: width * 0.75,
         height: height * 0.09,
         decoration: BoxDecoration(
@@ -38,22 +40,42 @@ class SignInWidget extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Visibility(
-              visible: hasIcon,
-              child: SvgPicture.asset(
-                iconSource,
-                width: 36,
+            isImage
+                ? Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Container(
+                          width: 28,
+                          child: Image.asset('assets/png/email.png')),
+                      SizedBox(
+                        width: 30.0,
+                      )
+                    ],
+                  )
+                : Visibility(
+                    visible: hasIcon,
+                    child: Row(
+                      children: [
+                        SvgPicture.asset(
+                          iconSource,
+                          width: 36,
+                        ),
+                        SizedBox(
+                          width: 20.0,
+                        ),
+                      ],
+                    ),
+                  ),
+            Align(
+              alignment: Alignment.center,
+              child: Text(
+                title,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    fontFamily: 'Avenir',
+                    fontWeight: FontWeight.bold,
+                    color: titleColor),
               ),
-            ),
-            SizedBox(
-              width: 20.0,
-            ),
-            Text(
-              title,
-              style: TextStyle(
-                  fontFamily: 'Avenir',
-                  fontWeight: FontWeight.bold,
-                  color: titleColor),
             )
           ],
         ),
