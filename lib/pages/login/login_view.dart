@@ -40,7 +40,7 @@ class _LoginViewState extends State<LoginView> {
                         image: DecorationImage(
                           fit: BoxFit.cover,
                           image: NetworkImage(
-                            'https://mir-s3-cdn-cf.behance.net/project_modules/disp/0f375488029143.5dca2fcc5aafd.jpg',
+                            'https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/ae9b8a96467331.5eb6d4b88f56a.jpg',
                           ),
                         ),
                       ));
