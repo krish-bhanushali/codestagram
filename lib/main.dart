@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
       title: 'Codestagram',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        fontFamily: 'Avenir',
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
