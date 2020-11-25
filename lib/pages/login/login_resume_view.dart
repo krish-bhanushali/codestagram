@@ -89,15 +89,44 @@ class _LoginResumeViewState extends State<LoginResumeView> {
                   SizedBox(
                     height: 10.0,
                   ),
-                  SignInWidget(
-                    isImage: true,
-                    width: double.infinity,
-                    height: height,
-                    hasIcon: true,
-                    title: 'nightgangdevs@gmail.com',
-                    titleColor: Colors.black,
-                    iconSource: 'assets/svg/message-alt.svg',
-                    fillColor: Colors.white,
+                  GestureDetector(
+                    onTap: () {},
+                    child: Container(
+                      padding: EdgeInsets.all(18.0),
+                      width: double.infinity,
+                      height: height * 0.09,
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          boxShadow: [
+                            BoxShadow(
+                                offset: Offset(0, 16),
+                                color: Colors.grey[200],
+                                blurRadius: 15.0)
+                          ],
+                          borderRadius:
+                              BorderRadius.all(Radius.circular(25.0))),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Container(
+                            child: Image.asset('assets/png/email.png'),
+                            width: 25.0,
+                          ),
+                          SizedBox(width: 30.0),
+                          Align(
+                              alignment: Alignment.center,
+                              child: Text(
+                                'nightgangdevs@gmail.com',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontFamily: 'Avenir',
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black,
+                                ),
+                              )),
+                        ],
+                      ),
+                    ),
                   ),
                   SizedBox(
                     height: 30.0,
