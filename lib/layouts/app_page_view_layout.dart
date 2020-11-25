@@ -10,6 +10,7 @@ class AppPageView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: PageView(
+        physics: BouncingScrollPhysics(),
         onPageChanged: (value) {
           bottomNavController.changeBottomNav(value);
         },
