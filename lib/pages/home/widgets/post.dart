@@ -117,7 +117,7 @@ class Post extends StatelessWidget {
               ),
               SvgPicture.asset(
                 'assets/svg/bookmark.svg',
-                width: 26,
+                height: 22,
                 color: AppColors.black,
               ),
             ],
