@@ -28,20 +28,17 @@ class ActivityNotificationTile extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(bottom: 20.0),
       decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.all(Radius.circular(20.0)),
-          boxShadow: [
-            BoxShadow(
-                offset: Offset(0, 20),
-                blurRadius: 15.0,
-                color: Colors.grey[200])
-          ]),
+        color: Colors.white,
+        borderRadius: BorderRadius.all(Radius.circular(20.0)),
+        boxShadow: [BoxShadow(offset: Offset(0, 20), blurRadius: 15.0, color: Colors.grey[200])],
+      ),
       height: height * 0.108,
       child: Row(
         children: [
-          Container(
-            padding: EdgeInsets.all(14.0),
-            child: NotifyStory(userImage: userPhotoUrl, index: 1),
+          Expanded(
+            child: Container(
+              child: NotifyStory(userImage: userPhotoUrl, index: 1),
+            ),
           ),
           Expanded(
             flex: 2,
@@ -51,24 +48,10 @@ class ActivityNotificationTile extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  RichText(
-                      text: TextSpan(
-                          style: TextStyle(
-                              fontFamily: 'Avenir',
-                              fontSize: 12,
-                              color: Colors.black),
-                          children: [
-                        TextSpan(
-                            text: userName,
-                            style: TextStyle(fontWeight: FontWeight.bold)),
-                        wasComment
-                            ? TextSpan(text: '\nCommented: $commentText')
-                            : TextSpan(text: ' liked your post')
-                      ])),
+                  RichText(text: TextSpan(style: TextStyle(fontFamily: 'Avenir', fontSize: 12, color: Colors.black), children: [TextSpan(text: userName, style: TextStyle(fontWeight: FontWeight.bold)), wasComment ? TextSpan(text: '\nCommented: $commentText') : TextSpan(text: ' liked your post')])),
                   Text(
                     timeOfNotification,
-                    style: TextStyle(
-                        color: Colors.grey, fontFamily: 'Avenir', fontSize: 10),
+                    style: TextStyle(color: Colors.grey, fontFamily: 'Avenir', fontSize: 10),
                   )
                 ],
               ),
@@ -76,9 +59,7 @@ class ActivityNotificationTile extends StatelessWidget {
           ),
           Expanded(
             child: ClipRRect(
-              borderRadius: BorderRadius.only(
-                  topRight: Radius.circular(20.0),
-                  bottomRight: Radius.circular(20.0)),
+              borderRadius: BorderRadius.only(topRight: Radius.circular(20.0), bottomRight: Radius.circular(20.0)),
               child: Image.network(
                 postUrl,
               ),
@@ -100,6 +81,7 @@ class NotifyStory extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(right: 8),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
             width: 60,

@@ -117,27 +117,28 @@ class ProfilePage extends StatelessWidget {
               ),
             ),
             child: GetBuilder<ProfileTabsController>(
-                init: _profileTabsController,
-                builder: (controller) {
-                  return Row(
-                    children: [
-                      Expanded(
-                        child: Center(
-                          child: Container(
-                            child: SvgPicture.asset(controller.tab == 1 ? 'assets/svg/category-f.svg' : 'assets/svg/category.svg'),
-                          ),
+              init: _profileTabsController,
+              builder: (controller) {
+                return Row(
+                  children: [
+                    Expanded(
+                      child: Center(
+                        child: Container(
+                          child: SvgPicture.asset(controller.tab == 1 ? 'assets/svg/category-f.svg' : 'assets/svg/category.svg'),
                         ),
                       ),
-                      Expanded(
-                        child: Center(
-                          child: Container(
-                            child: SvgPicture.asset(controller.tab == 2 ? 'assets/svg/bookmark-f.svg' : 'assets/svg/bookmark.svg'),
-                          ),
+                    ),
+                    Expanded(
+                      child: Center(
+                        child: Container(
+                          child: SvgPicture.asset(controller.tab == 2 ? 'assets/svg/bookmark-f.svg' : 'assets/svg/bookmark.svg'),
                         ),
-                      )
-                    ],
-                  );
-                }),
+                      ),
+                    )
+                  ],
+                );
+              },
+            ),
           ),
           Expanded(
             child: PageView(
