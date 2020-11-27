@@ -1,6 +1,5 @@
 import 'package:codestagram/styles/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class ActivityAppBar extends StatelessWidget implements PreferredSizeWidget {
   final double padding;
