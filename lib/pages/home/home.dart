@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'widgets/post.dart';
-import 'widgets/story_section.dart';
+
 import '../../styles/colors.dart';
 import '../../widgets/custom_app_bar.dart';
+import 'widgets/post.dart';
+import 'widgets/story_section.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -15,6 +16,7 @@ class HomePage extends StatelessWidget {
         alignment: Alignment.bottomCenter,
         children: [
           SingleChildScrollView(
+            physics: BouncingScrollPhysics(),
             child: Column(
               children: [
                 StorySection(),

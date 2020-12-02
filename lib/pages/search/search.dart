@@ -8,6 +8,7 @@ class SearchPage extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -25,8 +26,10 @@ class SearchPage extends StatelessWidget {
                       padding: EdgeInsets.all(2),
                       child: ClipRRect(
                         borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(index == 1 ? 0 : borderRadius),
-                          topRight: Radius.circular(index == 0 ? 0 : borderRadius),
+                          topLeft:
+                              Radius.circular(index == 1 ? 0 : borderRadius),
+                          topRight:
+                              Radius.circular(index == 0 ? 0 : borderRadius),
                         ),
                         child: Image.network(
                           'https://picsum.photos/id/${index + 30}/1080/1080',
@@ -36,7 +39,9 @@ class SearchPage extends StatelessWidget {
                     );
                   },
                   staggeredTileBuilder: (int index) {
-                    return index == 0 || index == 7 || index == 16 ? StaggeredTile.count(4, 4) : StaggeredTile.count(2, 2);
+                    return index == 0 || index == 7 || index == 16
+                        ? StaggeredTile.count(4, 4)
+                        : StaggeredTile.count(2, 2);
                   },
                 ),
               ),
