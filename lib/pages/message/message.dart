@@ -14,7 +14,7 @@ class MessagePage extends StatelessWidget {
           child: Column(
             children: [
               Padding(
-                padding: EdgeInsets.all(12),
+                padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -25,7 +25,7 @@ class MessagePage extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    Icon(Icons.add),
+                    IconButton(onPressed: () {}, icon: Icon(Icons.add)),
                   ],
                 ),
               ),
@@ -54,7 +54,7 @@ class MessagePage extends StatelessWidget {
                               style: TextStyle(fontWeight: FontWeight.bold),
                             ),
                             Text(
-                              'This is text message. - ${random.nextInt(60)}m ago',
+                              'This is text message. ${random.nextInt(60)}m ago',
                               style: TextStyle(color: Colors.grey),
                             ),
                           ],

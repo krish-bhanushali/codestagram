@@ -1,7 +1,21 @@
 import 'package:flutter/material.dart';
+
 import '../../../styles/colors.dart';
 
-const users = ['Melvin', 'Donalda', 'Wilhelmina', 'Melissa', 'Cliff', 'Bertha', 'Garyn', 'Etta', 'Charlene', 'Kristina', 'Wilhelmina', 'Vasilisa'];
+const users = [
+  'Melvin',
+  'Donalda',
+  'Wilhelmina',
+  'Melissa',
+  'Cliff',
+  'Bertha',
+  'Garyn',
+  'Etta',
+  'Charlene',
+  'Kristina',
+  'Wilhelmina',
+  'Vasilisa'
+];
 
 class StorySection extends StatelessWidget {
   @override
@@ -10,6 +24,7 @@ class StorySection extends StatelessWidget {
       height: 110,
       padding: EdgeInsets.symmetric(vertical: 12),
       child: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
         scrollDirection: Axis.horizontal,
         child: Row(
           children: [
@@ -27,7 +42,10 @@ class StorySection extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               itemCount: 12,
               itemBuilder: (context, index) {
-                return Story(userImage: 'https://randomuser.me/api/portraits/men/$index.jpg', index: index);
+                return Story(
+                    userImage:
+                        'https://randomuser.me/api/portraits/men/$index.jpg',
+                    index: index);
               },
             ),
           ],
