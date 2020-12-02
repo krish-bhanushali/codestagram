@@ -2,10 +2,11 @@ import 'package:codestagram/styles/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-class ProfileAppBar extends StatelessWidget implements PreferredSizeWidget {
+class CameraScreenAppBar extends StatelessWidget
+    implements PreferredSizeWidget {
   final double padding;
 
-  const ProfileAppBar({
+  const CameraScreenAppBar({
     Key key,
     this.padding,
   }) : super(key: key);
