@@ -8,11 +8,6 @@ import 'package:get/state_manager.dart';
 class AppPageView extends StatelessWidget {
   final BottomNavController bottomNavController = BottomNavController();
   final PageController _pageController = PageController(initialPage: 1);
-  List<Widget> children = [
-    CameraScreen(),
-    BottomNavLayout(),
-    MessagePage(),
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +20,11 @@ class AppPageView extends StatelessWidget {
           onPageChanged: (value) {
             bottomNavController.changeBottomNav(value);
           },
-          children: children,
+          children: [
+            CameraScreen(),
+            BottomNavLayout(),
+            MessagePage(),
+          ],
         ),
       ),
     );
