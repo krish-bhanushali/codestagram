@@ -4,7 +4,7 @@ enum BottomNavPage { home, search, activity, profile }
 
 class BottomNavController extends GetxController {
   BottomNavPage bottomNavPage = BottomNavPage.home;
-  bool isMessage = false;
+  int navStatus;
 
   changePage(int c) {
     if (c == 1) {
@@ -24,7 +24,7 @@ class BottomNavController extends GetxController {
   }
 
   changeBottomNav(int val) {
-    isMessage = val == 1 ? true : false;
+    navStatus = val;
     update();
   }
 }
