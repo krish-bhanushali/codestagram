@@ -15,7 +15,6 @@ class ChatScreen extends StatelessWidget {
           children: [
             Container(
               padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-              color: Colors.grey[100],
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
