@@ -1,3 +1,4 @@
+import 'package:codestagram/layouts/app_page_view_layout.dart';
 import 'package:codestagram/layouts/bottom_nav_layout.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: BottomNavLayout(),
+      home: AppPageView(),
     );
   }
 }

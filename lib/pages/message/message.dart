@@ -7,6 +7,10 @@ class MessagePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.camera_alt),
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           physics: BouncingScrollPhysics(),

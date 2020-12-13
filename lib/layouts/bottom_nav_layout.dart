@@ -1,6 +1,7 @@
 import 'package:codestagram/controllers/bottom_nav_controller.dart';
 import 'package:codestagram/layouts/app_page_view_layout.dart';
 import 'package:codestagram/pages/activity/activity.dart';
+import 'package:codestagram/pages/home/home.dart';
 import 'package:codestagram/pages/profile/profile.dart';
 import 'package:codestagram/pages/search/search.dart';
 import 'package:codestagram/widgets/bottom_nav.dart';
@@ -31,7 +32,7 @@ class BottomNavLayout extends StatelessWidget {
                 if (controller.bottomNavPage.toString() == 'BottomNavPage.profile') {
                   return ProfilePage();
                 }
-                return AppPageView(bottomNavController: _bottomNavController);
+                return HomePage();
               },
             ),
           ),
